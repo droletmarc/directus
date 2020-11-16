@@ -79,7 +79,7 @@ class SchemaManager
      * Data types that don't require length. See https://dev.mysql.com/doc/refman/8.0/en/string-type-syntax.html
      * @var array
      */
-    protected $noLengthDataTypes = [        
+    protected $noLengthDataTypes = [
         'TEXT',
         'TINYTEXT',
         'MEDIUMTEXT',
@@ -571,14 +571,14 @@ class SchemaManager
         // NOTE: Alias column must are nullable
         if (DataTypes::isAliasType($fieldType)) {
             $column['nullable'] = true;
-        }        
-                
+        }
+
         if ($this->isFloatingPointType($dataType)) {
             $column['length'] = sprintf('%d,%d', $column['precision'], $column['scale']);
         } else if ($this->source->isIntegerType($dataType)) {
             $column['length'] = $column['precision'];
         } else if (in_array($dataType, $this->noLengthDataTypes)) {
-            $column['length'] = null;        
+            $column['length'] = null;
         } else {
             $column['length'] = $column['char_length'];
         }
@@ -597,6 +597,7 @@ class SchemaManager
             'signed',
             'hidden_detail',
             'hidden_browse',
+            'hidden_batch',
             'required',
             'nullable',
             'readonly',

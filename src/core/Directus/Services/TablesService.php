@@ -853,6 +853,7 @@ class TablesService extends AbstractService
             'note' => null,
             'hidden_detail' => 0,
             'hidden_browse' => 0,
+            'hidden_batch' => 0,
             'options' => null,
         ];
 

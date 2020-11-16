@@ -283,6 +283,16 @@ class Field extends AbstractObject
     }
 
     /**
+     * Gets whether the field must be hidden in forms for batch edit
+     *
+     * @return bool
+     */
+    public function isHiddenBatch()
+    {
+        return $this->attributes->get('hidden_batch');
+    }
+
+    /**
      * Gets the field comment
      *
      * @return null|string
